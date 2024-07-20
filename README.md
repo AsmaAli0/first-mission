@@ -28,8 +28,75 @@ first,  i set up a virtual machine using VirtualBox and installed ROS Noetic on 
    - then I Followed the installation process to install Ubuntu 20.04 on the virtual machine.
    - Once the installation was completed, I restarted the virtual machine and logged in to Ubuntu.
 
-## Step 3: Install ROS Noetic on Ubuntu 20.04
+# Installing ROS Noetic on Ubuntu 20.04 Using VirtualBox
 
-1. **Set Up  Sources:**
--I recorded a video of setting up sources  
+1. *Set Up Your Sources:*
 
+   I opened a terminal in my Ubuntu VM and ran these commands :
+  * Setup my sources.list*
+
+
+   Setup my computer to accept software from packages.ros.org.
+
+[sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list']
+
+   
+
+3. *Set up my keys*
+
+[sudo apt install curl # if you haven't already installed curl]
+[curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo apt-key add -]
+
+
+
+   
+   
+
+   
+
+4. *Install ROS Noetic:*
+
+   I updated my package list again:
+
+   
+   [sudo apt update]
+   
+
+   And installed the ROS Noetic desktop-install version:
+
+   [sudo apt install ros-noetic-desktop]
+   
+
+   
+
+5. *Set Up Your Environment:*
+
+   I added ROS environment variables to my bash session:
+
+   sh
+   echo "source /opt/ros/noetic/setup.bash" >> ~/.bashrc
+   source ~/.bashrc
+   
+
+6. *Install Dependencies for Building Packages:*
+
+   Finally, I installed some commonly used dependencies:
+
+   sh
+   sudo apt install python3-rosinstall python3-rosinstall-generator python3-wstool build-essential
+   
+
+## Step 4: Verify Your Installation
+
+Lastly, I made sure everything was working correctly.
+
+1. *Test Your Installation:*
+
+   I opened a new terminal and ran:
+
+
+   roscore
+   
+
+   
+  
