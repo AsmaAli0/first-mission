@@ -97,6 +97,7 @@ Lastly, I made sure everything was working correctly.
 
    roscore
    
+<img width="959" alt="ros" src="https://github.com/user-attachments/assets/3dfd9244-6ee8-4cf5-a6f3-a6cdd528766d">
 
    
   
